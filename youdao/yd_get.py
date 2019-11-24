@@ -41,7 +41,7 @@ def translate(words):
         selector.xpath("//div[@%s='%s']" % hidden)[0].attrib['style'] = 'display:none'
 
     content = etree.tostring(selector, encoding='utf-8', method='html').decode('utf8')
-    content = re.sub(r'href="(?:http://dict\.youdao\.com)?/w/eng/(.*?)/', r'href="\1"', content)
+    content = re.sub(r'href="(?:http://dict\.youdao\.com)?/w(?:/eng)?/(.*?)/', r'href="\1"', content)
     return content
 
 
